@@ -1,18 +1,10 @@
-import css from './Navigation.module.css'
-import { NavLink, Outlet } from 'react-router-dom';
+import {StyledLink} from './Navigation.styled'
 
-
-const setActive = ({ isActive }) => `${isActive ? css.active : css.link}`;
-const Navigation = () => (
-    <>
+export default function Navigation() {
+  return (
     <nav>
-         <NavLink className={setActive}   to='/'>Home</NavLink >
-         <NavLink className={setActive}  to='/movies'>Movies</NavLink >
-        </nav>
-        <hr/>
-    <Outlet/>
-    </>
-
-)
-
-export default Navigation;
+      <StyledLink to="/">Home</StyledLink>
+      <StyledLink to="/movies"> Movies</StyledLink>
+    </nav>
+  );
+}
